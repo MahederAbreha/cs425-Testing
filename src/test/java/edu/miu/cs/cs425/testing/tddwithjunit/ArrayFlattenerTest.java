@@ -4,23 +4,23 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ArithmeticUtilTest {
-    private ArithmeticUtil arithmeticUtil;
+public class ArrayFlattenerTest {
+    private ArrayFlattener arrayFlattener;
 
     @org.junit.Before
     public void setUp() throws Exception {
-        this.arithmeticUtil= new ArithmeticUtil();
+        this.arrayFlattener= new ArrayFlattener();
     }
 
     @org.junit.After
     public void tearDown() throws Exception {
-        this.arithmeticUtil = null;
+        this.arrayFlattener = null;
     }
 
     @org.junit.Test
     public void testFlattenArrayWithValues() {
         Integer[][] array = {{1, 3}, {0}, {4, 5, 9}};
-        List<Integer> actual= arithmeticUtil.flattenArray(array);
+        List<Integer> actual= arrayFlattener.flattenArray(array);
         Integer[] expected = {1, 3, 0, 4, 5, 9};
         assertEquals(actual,expected);
     }
@@ -28,7 +28,7 @@ public class ArithmeticUtilTest {
     @org.junit.Test
     public void testFlattenArrayWithNullValues() {
         Integer[][] array = {};
-        List<Integer> actual= arithmeticUtil.flattenArray(array);
+        List<Integer> actual= arrayFlattener.flattenArray(array);
         Integer[] expected = {};
         assertEquals(actual, expected);
     }
